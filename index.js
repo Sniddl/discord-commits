@@ -31,11 +31,26 @@ try {
     return JSON.parse(_.template(embed)($data));
   });
 
-  console.dir(github);
-  console.dir(embeds);
+  const payload = JSON.stringify({
+    content: message,
+    embeds,
+  });
+
+  (async () => {
+    console.log("Sending message ...");
+    await axios.post(`${webhook}?wait=true`, payload, {
+      headers: {
+        "Content-Type": "application/json",
+        "X-GitHub-Event": github.context.eventName || "push",
+      },
+    });
+    console.log("Message sent ! Shutting down ...");
+    process.exit(0);
+  })().catch((err) => {
+    console.error("Error :", err.response.status, err.response.statusText);
+    console.error("Message :", err.response ? err.response.data : err.message);
+    process.exit(1);
+  });
 } catch (error) {
   core.setFailed(error.message);
 }
-
-// inserting for testing
-// inserting for testing
