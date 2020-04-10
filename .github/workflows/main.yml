@@ -12,5 +12,5 @@ jobs:
         uses: ./ # Uses an action in the root directory
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: hello world
+          message: "hello world"
           commit: "{ title: "asdf" }"
