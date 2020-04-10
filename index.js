@@ -1,6 +1,7 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 const _ = require("lodash");
+const axios = require("axios");
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 

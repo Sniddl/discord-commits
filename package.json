@@ -20,6 +20,7 @@
   "dependencies": {
     "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1",
+    "axios": "^0.19.2",
     "lodash": "^4.17.15"
   }
 }
