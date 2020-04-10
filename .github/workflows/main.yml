@@ -21,4 +21,4 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           message: "hello world"
-          commit: '{ "title": "{{ env.OS }}" }'
+          commit: '{ "title": "{{ commit.title }}" }'
