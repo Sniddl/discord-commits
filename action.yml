@@ -1,0 +1,22 @@
+name: "Discord Commits"
+description: "GitHub Action for Discord that prints commit messages."
+inputs:
+  webhook_id:
+    description: "discord webhook id"
+    required: true
+  message:
+    description: "A general message"
+  embed_title:
+    description: "the contents of the file being sent"
+  embed_description:
+    description: "color code of the embed"
+  embed_url:
+    description: "waits for server confirmation of message send before response, and returns the created message body"
+  embed_author_name:
+    description: "true if this is a TTS message"
+  embed_author_icon:
+    description: "override the default username of the webhook"
+
+runs:
+  using: "node12"
+  main: "index.js"
