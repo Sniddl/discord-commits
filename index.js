@@ -9,17 +9,22 @@ try {
   const message = core.getInput("message");
   const webhook = core.getInput("webhook");
   const embed = core.getInput("embed") || '{ "title": "{{ env.OS }}" }';
+  const data = {
+    env: { ...process.env },
+    github: { ...github },
+  };
 
   github.context.payload.commits = github.context.payload.commits || [
     { message: "this is a title\n\nthis is a description" },
     { message: "this is a title\n\nthis is a description" },
   ];
-  console.log(github.context.payload.commits);
+
+  console.dir(github);
+  console.dir(github.context.payload);
 
   const embeds = github.context.payload.commits.map((commit) => {
     const $data = {
-      env: { ...process.env },
-      github: { ...github },
+      ...data,
       commit: {
         title: commit.message.split("\n\n").slice(0, 1).join("\n\n"),
         description: commit.message.split("\n\n").slice(1).join("\n\n"),
@@ -33,7 +38,7 @@ try {
   });
 
   const payload = JSON.stringify({
-    content: message,
+    content: _.template(message)(data),
     embeds,
   });
 
