@@ -36,21 +36,24 @@ try {
     embeds,
   });
 
-  (async () => {
-    console.log("Sending message ...");
-    await axios.post(`${webhook}?wait=true`, payload, {
+  axios
+    .post(`${webhook}?wait=true`, payload, {
       headers: {
         "Content-Type": "application/json",
         "X-GitHub-Event": github.context.eventName || "push",
       },
+    })
+    .then((res) => {
+      console.log("Message sent ! Shutting down ...");
+      process.exit(0);
+    })
+    .catch((err) => {
+      console.error("Error :", err.response.status, err.response.statusText);
+      core.setFailed(
+        "Message :",
+        err.response ? err.response.data : err.message
+      );
     });
-    console.log("Message sent ! Shutting down ...");
-    process.exit(0);
-  })().catch((err) => {
-    console.error("Error :", err.response.status, err.response.statusText);
-    console.error("Message :", err.response ? err.response.data : err.message);
-    process.exit(1);
-  });
 } catch (error) {
   core.setFailed(error.message);
 }
