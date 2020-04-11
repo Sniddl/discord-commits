@@ -12,8 +12,8 @@ GitHub Action for Discord that prints commit messages based on templates.
 ## Example Usage
 
 ```yaml
-- name: Send message to discord
-        uses: Sniddl/discord-action@master
+- name: Discord Commits
+        uses: Sniddl/discord-commits@v1.2
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
