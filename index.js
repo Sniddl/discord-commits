@@ -68,7 +68,7 @@ try {
   };
 
   console.dir(github);
-  console.log(payload);
+  console.dir(payload);
 
   axios
     .post(`${webhook}?wait=true`, JSON.stringify(payload), {
