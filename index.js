@@ -62,15 +62,16 @@ try {
     return parsed;
   });
 
-  const payload = JSON.stringify({
+  const payload = {
     content: _.template(message)(data),
     embeds,
-  });
+  };
 
-  //   console.log(payload);
+  console.dir(github);
+  console.log(payload);
 
   axios
-    .post(`${webhook}?wait=true`, payload, {
+    .post(`${webhook}?wait=true`, JSON.stringify(payload), {
       headers: {
         "Content-Type": "application/json",
         "X-GitHub-Event": github.context.eventName || "push",
