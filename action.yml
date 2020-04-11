@@ -1,5 +1,7 @@
 name: "Discord Commits"
 description: "GitHub Action for Discord that prints commit messages."
+icon: "bell"
+color: "purple"
 inputs:
   webhook:
     description: "discord webhook url without /github"
