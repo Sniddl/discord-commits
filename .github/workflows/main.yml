@@ -19,5 +19,5 @@ jobs:
         uses: ./ # Uses an action in the root directory
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "hello world"
+          message: "Successful commit to {{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}.\nDiff: {{ github.context.payload.compare }}"
           embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://avatars.io/gravatar/{{ commit.author.email }}"} }'

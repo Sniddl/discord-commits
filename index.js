@@ -63,10 +63,6 @@ try {
     embeds,
   };
 
-  console.dir(github);
-  console.dir(payload);
-  console.dir(embeds);
-
   axios
     .post(`${webhook}?wait=true`, JSON.stringify(payload), {
       headers: {
