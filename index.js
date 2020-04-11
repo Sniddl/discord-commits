@@ -2,25 +2,47 @@ const core = require("@actions/core");
 const github = require("@actions/github");
 const _ = require("lodash");
 const axios = require("axios");
+const ST = require("stjs");
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
 try {
   const message = core.getInput("message");
   const webhook = core.getInput("webhook");
-  const embed = core.getInput("embed") || '{ "title": "{{ env.OS }}" }';
+  const embed =
+    core.getInput("embed") ||
+    '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://avatars.io/gravatar/{{ commit.author.email }}"} }';
   const data = {
     env: { ...process.env },
     github: { ...github },
   };
 
   github.context.payload.commits = github.context.payload.commits || [
-    { message: "this is a title\n\nthis is a description" },
-    { message: "this is a title\n\nthis is a description" },
+    {
+      author: {
+        email: "burroughszeb@me.com",
+        name: "Zeb",
+        username: "ZebTheWizard",
+      },
+      message: "this is a title\n\nthis is a description",
+    },
+    {
+      author: {
+        email: "burroughszeb@me.com",
+        name: "Zeb",
+        username: "ZebTheWizard",
+      },
+      message:
+        "testing\n" +
+        "\n" +
+        "**What is new?**\n" +
+        "I'm testing out some capability.\n" +
+        "~what do you think?~\n" +
+        "```js\n" +
+        "console.log('asdf');\n" +
+        "```",
+    },
   ];
-
-  console.dir(github);
-  console.dir(github.context.payload);
 
   const embeds = github.context.payload.commits.map((commit) => {
     const $data = {
@@ -32,15 +54,20 @@ try {
       },
     };
 
-    console.log($data);
-
-    return JSON.parse(_.template(embed)($data));
+    const parsed = ST.select($data)
+      .transformWith({
+        commit: JSON.parse(embed),
+      })
+      .root();
+    return parsed;
   });
 
   const payload = JSON.stringify({
     content: _.template(message)(data),
     embeds,
   });
+
+  //   console.log(payload);
 
   axios
     .post(`${webhook}?wait=true`, payload, {
