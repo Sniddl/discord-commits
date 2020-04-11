@@ -1,7 +1,7 @@
 {
   "name": "discord-commits",
   "version": "1.0.0",
-  "description": "a github action that nicely displays multiple commits in discord based on tempaltes.",
+  "description": "A github action that nicely displays multiple commits in discord based on tempaltes.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
