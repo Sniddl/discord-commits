@@ -4,6 +4,9 @@ GitHub Action for Discord that prints commit messages based on templates.
 
 ## Example Appearence:
 
+
+Put Discord chat syntax (markdown) in your commit messages for nice formatting. As an example, here is a link to commit in picture. https://github.com/Sniddl/discord-commits/commit/1e5aedd3f8bae8bb8272289cea173f2258e519e8
+
 ![Imgur](https://imgur.com/YvLWWGL.jpg)
 
 
@@ -19,6 +22,7 @@ GitHub Action for Discord that prints commit messages based on templates.
           message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
           embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://avatars.io/gravatar/{{ commit.author.email }}"} }'
 ```
+
 
 ## Variables
 
