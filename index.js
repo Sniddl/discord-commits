@@ -54,11 +54,7 @@ try {
       },
     };
 
-    const parsed = ST.select($data)
-      .transformWith({
-        commit: JSON.parse(embed),
-      })
-      .root();
+    const parsed = ST.select($data).transformWith(JSON.parse(embed)).root();
     return parsed;
   });
 
@@ -69,6 +65,7 @@ try {
 
   console.dir(github);
   console.dir(payload);
+  console.dir(embeds);
 
   axios
     .post(`${webhook}?wait=true`, JSON.stringify(payload), {
