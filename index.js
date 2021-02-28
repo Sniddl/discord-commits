@@ -6,16 +6,28 @@ const ST = require("stjs");
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
+function stringToBoolean(string){
+  switch(string.toLowerCase().trim()){
+    case "false": case "no": case "0": case null: return false;
+    default: return true;
+  }
+}
+
 try {
   const message = core.getInput("message");
   const webhook = core.getInput("webhook");
   const embed =
     core.getInput("embed") ||
     '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://avatars.io/gravatar/{{ commit.author.email }}"} }';
+  const mergedOnly = stringToBoolean(core.getInput("merged-only"));
   const data = {
     env: { ...process.env },
     github: { ...github },
   };
+
+  if (mergedOnly) {
+    github.context.payload.commits = github.context.payload.commits.slice(github.context.payload.commits.length - 1)
+  }
 
   github.context.payload.commits = github.context.payload.commits || [
     {
