@@ -8,14 +8,13 @@ _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
 function stringToBoolean(string){
   switch(string.toLowerCase().trim()){
-    case "false": case "no": case "0": case null: return false;
+    case "false": case "no": case "0": case "": case null: return false;
     default: return true;
   }
 }
 
 try {
-  const mergedOnly = stringToBoolean(core.getInput("merged-only"));
-  const message = core.getInput("message") + mergedOnly;
+  const message = core.getInput("message");
   const webhook = core.getInput("webhook");
   const embed =
     core.getInput("embed") ||
@@ -24,6 +23,7 @@ try {
     env: { ...process.env },
     github: { ...github },
   };
+  const mergedOnly = stringToBoolean(core.getInput("merged-only"));
 
 
   if (mergedOnly) {
