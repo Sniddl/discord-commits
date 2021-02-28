@@ -14,16 +14,17 @@ function stringToBoolean(string){
 }
 
 try {
-  const message = core.getInput("message");
+  const mergedOnly = stringToBoolean(core.getInput("merged-only"));
+  const message = core.getInput("message") + mergedOnly;
   const webhook = core.getInput("webhook");
   const embed =
     core.getInput("embed") ||
     '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://avatars.io/gravatar/{{ commit.author.email }}"} }';
-  const mergedOnly = stringToBoolean(core.getInput("merged-only"));
   const data = {
     env: { ...process.env },
     github: { ...github },
   };
+
 
   if (mergedOnly) {
     github.context.payload.commits = github.context.payload.commits.slice(github.context.payload.commits.length - 1)
