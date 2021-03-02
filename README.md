@@ -1,5 +1,5 @@
 # Discord Action Commits
-GitHub Action for Discord that prints commit messages based on templates.
+GitHub Action for Discord that prints multiple commit messages based on a single template.
 
 
 ## Example Appearence:
