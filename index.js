@@ -6,6 +6,13 @@ const ST = require("stjs");
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
+function stringToBoolean(string){
+  switch(string.toLowerCase().trim()){
+    case "false": case "no": case "0": case "": case null: return false;
+    default: return true;
+  }
+}
+
 try {
   const message = core.getInput("message");
   const webhook = core.getInput("webhook");
@@ -16,6 +23,11 @@ try {
     env: { ...process.env },
     github: { ...github },
   };
+  const lastCommitOnly = stringToBoolean(core.getInput("last-commit-only"));
+
+  if (lastCommitOnly) {
+    github.context.payload.commits = github.context.payload.commits.slice(github.context.payload.commits.length - 1)
+  }
 
   github.context.payload.commits = github.context.payload.commits || [
     {
