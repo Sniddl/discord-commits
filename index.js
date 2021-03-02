@@ -32,20 +32,20 @@ try {
   github.context.payload.commits = github.context.payload.commits || [
     {
       author: {
-        email: "burroughszeb@me.com",
-        name: "Zeb",
+        email: "email@example.com",
+        name: "Broken",
         username: "ZebTheWizard",
       },
-      message: "this is a title\n\nthis is a description",
+      message: "If you see this, you most likely did not setup your action right. This means no commits were found in the github context and somehow a commit event was triggered.",
     },
     {
       author: {
-        email: "burroughszeb@me.com",
-        name: "Zeb",
+        email: "email@example.com",
+        name: "Broken",
         username: "ZebTheWizard",
       },
       message:
-        "testing\n" +
+        "optionally you can use this array for basic testing. for example: \n" +
         "\n" +
         "**What is new?**\n" +
         "I'm testing out some capability.\n" +
