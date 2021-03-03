@@ -1,5 +1,5 @@
 name: "Discord Commits"
-description: "GitHub Action for Discord that prints commit messages."
+description: "GitHub Action for Discord that prints ALL commit messages."
 branding:
   icon: "bell"
   color: "purple"
@@ -10,8 +10,8 @@ inputs:
   message:
     description: "A general message that is displayed for all commits."
   embed:
-    description: "JSON string that accepts double braces for templating."
+    description: "JSON string that accepts double braces for templates."
 
 runs:
   using: "node12"
-  main: "index.js"
+  main: "discord-commits/index.js"
