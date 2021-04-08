@@ -83,11 +83,11 @@ try {
       },
     })
     .then((res) => {
-      console.log("Message sent ! Shutting down ...");
+      console.log("Message sent! Shutting down ...");
       process.exit(0);
     })
     .catch((err) => {
-      console.error("Error :", err.response.status, err.response.statusText);
+      console.error("Error:", err.response.statusText);
       core.setFailed(
         "Message :",
         err.response ? err.response.data : err.message
