@@ -84,6 +84,7 @@ try {
     })
     .then((res) => {
       console.log("Message sent! Shutting down ...");
+      console.log("Logging payload:", payload)
       process.exit(0);
     })
     .catch((err) => {
