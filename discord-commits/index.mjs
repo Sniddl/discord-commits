@@ -25,11 +25,6 @@ if (lastCommitOnly) {
   github.context.payload.commits = github.context.payload.commits.slice(-1)
 }
 
-console.log({ template })
-console.log({ template: template.embed })
-console.log({ extraEmbeds })
-console.log({ embed })
-
 let embeds = github.context.payload.commits.map(commit => {
   return parseTemplate({
     ...DATA,
@@ -39,11 +34,9 @@ let embeds = github.context.payload.commits.map(commit => {
 
 embeds = embeds.concat(extraEmbeds.map(embed => parseTemplate(DATA, embed)))
 
-console.log({ embeds })
-
 const payload = {
   content: parseTemplate(DATA, message),
-  embeds
+  embeds: embeds.filter(x => x)
 }
 
 // console.log(defaultPayload)
