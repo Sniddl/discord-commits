@@ -8,7 +8,7 @@ export default {
         title: "{{ commit.title }}",
         description: "{{ commit.description }}",
     },
-    embeds: [{
+    extras: [{
         title: "View Changes",
         url: "{{ github.context.payload.compare }}"
     }]
