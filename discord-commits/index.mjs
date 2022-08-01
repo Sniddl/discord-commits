@@ -26,6 +26,7 @@ if (lastCommitOnly) {
 }
 
 console.log({ extraEmbeds })
+console.log({ embed })
 
 let embeds = github.context.payload.commits.map(commit => {
   return parseTemplate({
@@ -34,7 +35,7 @@ let embeds = github.context.payload.commits.map(commit => {
   }, JSON.parse(embed));
 })
 
-embeds = embeds.concat(extraEmbeds.map(embed => parseTemplate(DATA, embed)))
+// embeds = embeds.concat(extraEmbeds.map(embed => parseTemplate(DATA, embed)))
 
 console.log({ embeds })
 
