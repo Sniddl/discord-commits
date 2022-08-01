@@ -14,8 +14,6 @@ jobs:
           node-version: 16.x
           cache: 'yarn'
 
-      # - name: Install NPM Dependencies (prod)
-      #   run: npm install --frozen-lockfile --production
       - name: Send message to discord
         uses: ./ # Uses an action in the root directory
         with:
@@ -24,3 +22,4 @@ jobs:
           include-extras: true
           # message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
           # embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://github.com/{{ commit.author.username }}.png"} }'
+          # last-commit-only: true

@@ -11,7 +11,7 @@ export default {
         url: "{{ commit.url }}"
     },
     extras: [{
-        title: "View Changes",
+        title: "View All Changes",
         url: "{{ github.context.payload.compare }}"
     }]
 }
