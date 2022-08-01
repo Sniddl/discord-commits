@@ -1,6 +1,6 @@
 import core from "@actions/core";
 import github from "@actions/github";
-import { createCommit, loadTemplate, parseTemplate } from "./api.mjs";
+import { createCommit, loadTemplate, parseTemplate, stringToBoolean } from "./api.mjs";
 import defaultPayload from "./defaults/payload-commits.mjs"
 
 
