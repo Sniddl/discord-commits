@@ -25,6 +25,7 @@ if (lastCommitOnly) {
   github.context.payload.commits = github.context.payload.commits.slice(-1)
 }
 
+console.log({ template })
 console.log({ extraEmbeds })
 console.log({ embed })
 
