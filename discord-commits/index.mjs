@@ -14,7 +14,8 @@ const extraEmbeds = stringToBoolean(core.getInput("include-extras")) ? template.
 
 const embed = stringOrFalse(core.getInput("embed")) || JSON.stringify(template.embed)
 
-console.log({ embed })
+console.log({ github })
+console.log({ core })
 
 const DATA = {
   env: { ...process.env },
@@ -28,6 +29,7 @@ if (lastCommitOnly) {
 }
 
 let embeds = github.context.payload.commits.map(commit => {
+  console.log({ commit })
   return parseTemplate({
     ...DATA,
     commit: createCommit(commit),
