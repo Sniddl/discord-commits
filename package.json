@@ -21,8 +21,6 @@
     "@actions/core": "^1.2.6",
     "@actions/github": "^2.2.0",
     "@octokit/core": "^3.2.5",
-    "axios": "^0.21.1",
-    "lodash": "^4.17.19",
     "stjs": "0.0.5"
   }
 }
