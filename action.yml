@@ -17,5 +17,5 @@ inputs:
     description: "The name of of a premade template."
 
 runs:
-  using: "node16"
+  using: "node14"
   main: "discord-commits/index.mjs"
