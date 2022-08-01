@@ -1,7 +1,7 @@
 /**
  * Returns an embed containing a title and description.
  * The title links to the commit url
- * Includes author's name and gravatar.
+ * Includes author's name and GitHub avatar.
  */
 
 export default {

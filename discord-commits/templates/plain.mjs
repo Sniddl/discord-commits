@@ -1,5 +1,5 @@
 /**
- * Returns an embed containing a title and description
+ * Returns a message and no embeds
  */
 
 export default {

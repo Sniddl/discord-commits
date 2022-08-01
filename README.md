@@ -51,6 +51,76 @@ last-commit-only | Boolean - Only include the last commit.
 
 ---
 
+# Predefined templates
+
+Here are the defaults for each template. If you want to modify the values, you need to turn the JSON into a string so it can be passed from the action environment to the script.  See main.yml for a commented out example.
+
+## plain
+Returns a message and no embeds
+
+```
+{
+    embed: false,
+}
+```
+
+## plain-author
+Returns embeds containing a title and description. Includes the author's name.
+
+```
+{
+  embed: {
+    title: "{{ commit.title }}",
+    description: "{{ commit.description }}",
+    author: {
+      name: "{{ commit.author.name }}"
+    }
+  }
+}
+```
+
+## simple-link
+Returns embeds containing a title and description. The title links to the commit url
+
+```
+{
+  embed: {
+    title: "{{ commit.title }}",
+    description: "{{ commit.description }}",
+    url: "{{ commit.url }}"
+  }
+}
+```
+
+## author-with-link
+Returns embeds containing a title and description. The title links to the commit url. Includes the author's name
+
+```
+embed: {
+  title: "{{ commit.title }}",
+  description: "{{ commit.description }}",
+  url: "{{ commit.url }}",
+  author: {
+    name: "{{ commit.author.name }}"
+  }
+}
+```
+
+## avatar-with-link
+Returns embeds containing a title and description. The title links to the commit url. Includes author's name and GitHub avatar.
+
+```
+embed: {
+  title: "{{ commit.title }}",
+  description: "{{ commit.description }}",
+  url: "{{ commit.url }}",
+  author: {
+    name: "{{ commit.author.name }}",
+    icon_url: "https://github.com/{{ commit.author.username }}.png"
+  }
+}
+```
+
 ## Testing / Contributing.
 
 We suggest everyone uses a tool like https://github.com/nektos/act to test GitHub actions locally. This is the tool I use so the directory structure will reflect that. If the following command does not pass, I will not accept your PR.
