@@ -64,3 +64,4 @@ act -W tests/workflows -e tests/push.json
 - [ ] Create option for max number of commits.
 - [ ] Better testing.
 - [ ] Better README structure/information.
+
