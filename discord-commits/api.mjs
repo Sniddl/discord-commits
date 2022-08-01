@@ -15,12 +15,12 @@ export function stringToBoolean(string) {
     }
 }
 
-export function createCommit(data) {
+export function createCommit(commit) {
     const messageSections = commit.message.split("\n\n")
     return {
         title: messageSections[0],
         description: messageSections.slice(1).join("\n\n"),
-        ...data
+        ...commit
     }
 }
 
