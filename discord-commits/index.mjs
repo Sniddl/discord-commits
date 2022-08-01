@@ -60,6 +60,7 @@ try {
     body: JSON.stringify(payload)
   })
 } catch (err) {
+  console.error("Error:", err);
   core.setFailed(
     "Message :",
     err.response ? err.response.data : err.message
