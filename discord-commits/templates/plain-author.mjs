@@ -4,9 +4,12 @@
  */
 
 export default {
-    title: "{{ commit.title }}",
-    description: "{{ commit.description }}",
-    author: {
-        name: "{{ commit.author.name }}"
+    message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**",
+    embed: {
+        title: "{{ commit.title }}",
+        description: "{{ commit.description }}",
+        author: {
+            name: "{{ commit.author.name }}"
+        }
     }
 }

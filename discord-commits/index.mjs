@@ -4,11 +4,13 @@ import fetch from "node-fetch";
 import { createCommit, loadTemplate, parseTemplate, stringToBoolean } from "./api.mjs";
 import defaultPayload from "./defaults/payload-commits.mjs"
 
+const templateName = core.getInput("last-commit-only") || "plain";
+const template = loadTemplate(templateName)
 
-const message = core.getInput("message")
+const message = core.getInput("message") || template.message
 const webhook = core.getInput("webhook");
 const lastCommitOnly = stringToBoolean(core.getInput("last-commit-only"))
-const templateName = core.getInput("last-commit-only") || "plain";
+const extraEmbeds = stringToBoolean(core.getInput("include-extras")) ? template.embeds || [] : []
 
 const embed = await loadTemplate(templateName)
 
@@ -23,12 +25,18 @@ if (lastCommitOnly) {
   github.context.payload.commits = github.context.payload.commits.slice(-1)
 }
 
-const embeds = github.context.payload.commits.map(commit => {
+console.log({ extraEmbeds })
+
+let embeds = github.context.payload.commits.map(commit => {
   return parseTemplate({
     ...DATA,
     commit: createCommit(commit),
   }, JSON.parse(embed));
 })
+
+embeds = embeds.concat(extraEmbeds.map(embed => parseTemplate(DATA, embed)))
+
+console.log({ embeds })
 
 const payload = {
   content: parseTemplate(DATA, message)
