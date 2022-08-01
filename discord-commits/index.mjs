@@ -10,7 +10,7 @@ const template = await loadTemplate(templateName)
 const message = core.getInput("message") || template.message
 const webhook = core.getInput("webhook");
 const lastCommitOnly = stringToBoolean(core.getInput("last-commit-only"))
-const extraEmbeds = stringToBoolean(core.getInput("include-extras") ?? true) ? template.extras || [] : []
+const extraEmbeds = stringToBoolean(core.getInput("include-extras")) ? template.extras || [] : []
 
 const embed = JSON.stringify(template.embed)
 
