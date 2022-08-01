@@ -2,7 +2,7 @@
   "name": "discord-commits",
   "version": "1.0.0",
   "description": "A github action that nicely displays multiple commits in discord based on templates.",
-  "main": "discord-commits/index.js",
+  "main": "discord-commits/index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,8 +21,7 @@
     "@actions/core": "^1.2.6",
     "@actions/github": "^2.2.0",
     "@octokit/core": "^3.2.5",
-    "axios": "^0.21.1",
-    "lodash": "^4.17.19",
+    "node-fetch": "^3.2.10",
     "stjs": "0.0.5"
   }
 }

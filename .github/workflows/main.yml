@@ -6,18 +6,20 @@ jobs:
     name: discord commits
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Use Node 12.x
-        uses: actions/setup-node@v1
+      - name: Use Node 16.x
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.x
+          node-version: 16.x
+          cache: 'yarn'
 
-      - name: Install NPM Dependencies (prod)
-        run: npm install --frozen-lockfile --production
       - name: Send message to discord
         uses: ./ # Uses an action in the root directory
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
-          embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://avatars.io/gravatar/{{ commit.author.email }}"} }'
+          template: 'avatar-with-link'
+          include-extras: true
+          # message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
+          # embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://github.com/{{ commit.author.username }}.png"} }'
+          # last-commit-only: true

@@ -8,10 +8,16 @@ inputs:
     description: "discord webhook url without /github"
     required: true
   message:
-    description: "A general message that is displayed for all commits."
+    description: "A general message that is displayed for all commits. Defaults to the repo name."
   embed:
-    description: "JSON string that accepts double braces for templates."
+    description: "JSON string that accepts double braces for templates. Defaults to template's embed template"
+  include-extras:
+    description: "Boolean - Include extra embeds provided from templates."
+  template:
+    description: "The name of of a premade template."
+  last-commit-only:
+    description: "Boolean - only show the last commit."
 
 runs:
-  using: "node12"
-  main: "discord-commits/index.js"
+  using: "node16"
+  main: "discord-commits/index.mjs"
