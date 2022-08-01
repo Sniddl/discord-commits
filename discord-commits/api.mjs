@@ -15,6 +15,13 @@ export function stringToBoolean(string) {
     }
 }
 
+export function stringOrFalse(string) {
+    switch (string.toLowerCase().trim()) {
+        case "false": case "no": case "0": case "": case null: return false;
+        default: return string;
+    }
+}
+
 export function createCommit(commit) {
     const messageSections = commit.message.split("\n\n")
     return {

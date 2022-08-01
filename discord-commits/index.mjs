@@ -1,7 +1,7 @@
 import core from "@actions/core";
 import github from "@actions/github";
 import fetch from "node-fetch";
-import { createCommit, loadTemplate, parseTemplate, stringToBoolean } from "./api.mjs";
+import { createCommit, loadTemplate, parseTemplate, stringOrFalse, stringToBoolean } from "./api.mjs";
 import defaultPayload from "./defaults/payload-commits.mjs"
 
 const templateName = core.getInput("template") || "plain";
@@ -12,7 +12,7 @@ const webhook = core.getInput("webhook");
 const lastCommitOnly = stringToBoolean(core.getInput("last-commit-only"))
 const extraEmbeds = stringToBoolean(core.getInput("include-extras")) ? template.extras || [] : []
 
-const embed = stringToBoolean(core.getInput("embed")) || JSON.stringify(template.embed)
+const embed = stringOrFalse(core.getInput("embed")) || JSON.stringify(template.embed)
 
 console.log({ embed })
 
