@@ -14,6 +14,8 @@ const extraEmbeds = stringToBoolean(core.getInput("include-extras")) ? template.
 
 const embed = stringToBoolean(core.getInput("embed")) || JSON.stringify(template.embed)
 
+console.log({ embed })
+
 const DATA = {
   env: { ...process.env },
   github: { ...github },
