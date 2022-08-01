@@ -12,7 +12,11 @@ export default {
         url: "{{ commit.url }}",
         author: {
             name: "{{ commit.author.name }}",
-            icon_url: "https://avatars.io/gravatar/{{ commit.author.email }}"
+            icon_url: "https://github.com/{{ commit.author.username }}.png"
         }
-    }
+    },
+    extras: [{
+        title: "View Changes",
+        url: "{{ github.context.payload.compare }}"
+    }]
 }

@@ -11,5 +11,9 @@ export default {
         author: {
             name: "{{ commit.author.name }}"
         }
-    }
+    },
+    extras: [{
+        title: "View Changes",
+        url: "{{ github.context.payload.compare }}"
+    }]
 }

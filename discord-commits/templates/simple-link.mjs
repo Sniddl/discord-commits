@@ -9,5 +9,9 @@ export default {
         title: "{{ commit.title }}",
         description: "{{ commit.description }}",
         url: "{{ commit.url }}"
-    }
+    },
+    extras: [{
+        title: "View Changes",
+        url: "{{ github.context.payload.compare }}"
+    }]
 }
