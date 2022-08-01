@@ -30,7 +30,7 @@ const embeds = github.context.payload.commits.map(commit => {
 })
 
 const payload = {
-  content: parseTemplate(data, message)
+  content: parseTemplate(DATA, message)
 }
 
 // console.log(defaultPayload)
