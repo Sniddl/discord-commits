@@ -5,7 +5,7 @@ import { createCommit, loadTemplate, parseTemplate, stringToBoolean } from "./ap
 import defaultPayload from "./defaults/payload-commits.mjs"
 
 const templateName = core.getInput("last-commit-only") || "plain";
-const template = loadTemplate(templateName)
+const template = await loadTemplate(templateName)
 
 const message = core.getInput("message") || template.message
 const webhook = core.getInput("webhook");
