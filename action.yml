@@ -13,5 +13,5 @@ inputs:
     description: "JSON string that accepts double braces for templates."
 
 runs:
-  using: "node14"
+  using: "node16"
   main: "discord-commits/index.mjs"
