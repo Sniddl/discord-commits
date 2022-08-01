@@ -42,7 +42,8 @@ embeds = embeds.concat(extraEmbeds.map(embed => parseTemplate(DATA, embed)))
 console.log({ embeds })
 
 const payload = {
-  content: parseTemplate(DATA, message)
+  content: parseTemplate(DATA, message),
+  embeds
 }
 
 // console.log(defaultPayload)

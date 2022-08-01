@@ -11,7 +11,11 @@ inputs:
     description: "A general message that is displayed for all commits."
   embed:
     description: "JSON string that accepts double braces for templates."
+  include-extras:
+    description: "Include extra embeds provided from templates."
+  template:
+    description: "The name of of a premade template."
 
 runs:
-  using: "node16"
+  using: "node18"
   main: "discord-commits/index.mjs"
