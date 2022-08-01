@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 import { createCommit, loadTemplate, parseTemplate, stringToBoolean } from "./api.mjs";
 import defaultPayload from "./defaults/payload-commits.mjs"
 
-const templateName = core.getInput("last-commit-only") || "plain";
+const templateName = core.getInput("template") || "plain";
 const template = await loadTemplate(templateName)
 
 const message = core.getInput("message") || template.message
@@ -12,7 +12,7 @@ const webhook = core.getInput("webhook");
 const lastCommitOnly = stringToBoolean(core.getInput("last-commit-only"))
 const extraEmbeds = stringToBoolean(core.getInput("include-extras")) ? template.extras || [] : []
 
-const embed = JSON.stringify(template.embed)
+const embed = stringToBoolean(core.getInput("embed")) || JSON.stringify(template.embed)
 
 const DATA = {
   env: { ...process.env },
