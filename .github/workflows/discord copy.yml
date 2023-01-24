@@ -1,0 +1,22 @@
+name: Discord Copy
+
+on: 
+  - push
+
+jobs:
+  disord_test_message:
+    runs-on: ubuntu-latest
+    name: discord commits
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Send message to different discord
+        uses: ./ # Uses an action in the root directory
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }} # you would use different web hook than other discord
+          template: 'avatar-with-link'
+          include-extras: true
+          # message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
+          # embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://github.com/{{ commit.author.username }}.png"} }'
+          # last-commit-only: true
