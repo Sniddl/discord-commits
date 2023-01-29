@@ -14,9 +14,6 @@ const extraEmbeds = stringToBoolean(core.getInput("include-extras")) ? template.
 
 const embed = stringOrFalse(core.getInput("embed")) || JSON.stringify(template.embed)
 
-console.log({ github })
-console.log({ core })
-
 const DATA = {
   env: { ...process.env },
   github: { ...github },
@@ -29,7 +26,6 @@ if (lastCommitOnly) {
 }
 
 let embeds = github.context.payload.commits.map(commit => {
-  console.log({ commit })
   return parseTemplate({
     ...DATA,
     commit: createCommit(commit),
@@ -43,23 +39,6 @@ const payload = {
   embeds: embeds.filter(x => x)
 }
 
-// console.log(defaultPayload)
-
-// const payload = {
-//   content: "Hello world",
-//   embeds: [
-//     {
-//       title: "Hello embed",
-//       description: "Hello embed description",
-//       // url: "https://google.com",
-//       author: {
-//         name: "Wade Zimmerman",
-//         //   icon_url: "https://avatars.io/gravatar/codingsurplus@gmail.com"
-//       }
-//     }
-//   ]
-// }
-
 try {
   await fetch(`${webhook}?wait=true`, {
     method: 'POST',
@@ -70,7 +49,8 @@ try {
     body: JSON.stringify(payload)
   })
 } catch (err) {
-  console.error("Error:", err);
+  console.error(err)
+  core.error(err)
   core.setFailed(
     "Message :",
     err.response ? err.response.data : err.message

@@ -14,7 +14,7 @@ Use markdown in your commit messages for nice formatting. As an example, here is
 
 ```yaml
 - name: Discord Commits
-        uses: Sniddl/discord-commits@v1.5
+        uses: Sniddl/discord-commits@v1.6
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           template: 'avatar-with-link'
@@ -48,6 +48,10 @@ Option | Description
 |---|---|
 include-extras | Boolean - Include extra embeds from templates such as a link to the payload difference.
 last-commit-only | Boolean - Only include the last commit.
+
+## Resources
+For information on the GitHub context API visit https://docs.github.com/en/actions/learn-github-actions/contexts
+For information on the Discord Webhook API visit https://discord.com/developers/docs/resources/webhook
 
 ---
 
