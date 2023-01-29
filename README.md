@@ -14,7 +14,7 @@ Use markdown in your commit messages for nice formatting. As an example, here is
 
 ```yaml
 - name: Discord Commits
-        uses: Sniddl/discord-commits@v1.4
+        uses: Sniddl/discord-commits@v1.6
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           template: 'avatar-with-link'

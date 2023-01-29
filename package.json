@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/Sniddl/discord-commits#readme",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^2.2.0",
-    "@octokit/core": "^3.2.5",
-    "node-fetch": "^3.2.10",
-    "stjs": "0.0.5"
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "@octokit/core": "^4.2.0",
+    "node-fetch": "^3.3.0",
+    "stjs": "^0.0.5"
   }
 }

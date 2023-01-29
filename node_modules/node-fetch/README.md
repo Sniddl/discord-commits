@@ -269,8 +269,8 @@ It is common to create a helper function to check that the response contains no 
 import fetch from 'node-fetch';
 
 class HTTPResponseError extends Error {
-	constructor(response, ...args) {
-		super(`HTTP Error Response: ${response.status} ${response.statusText}`, ...args);
+	constructor(response) {
+		super(`HTTP Error Response: ${response.status} ${response.statusText}`);
 		this.response = response;
 	}
 }
@@ -400,7 +400,7 @@ console.log(response.headers.raw()['set-cookie']);
 ### Post data using a file
 
 ```js
-import fetch {
+import fetch, {
   Blob,
   blobFrom,
   blobFromSync,
