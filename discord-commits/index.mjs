@@ -16,6 +16,7 @@ const embed = stringOrFalse(core.getInput("embed")) || JSON.stringify(template.e
 
 console.log({ github })
 console.log({ core })
+console.log({ event: github.event})
 
 const DATA = {
   env: { ...process.env },
