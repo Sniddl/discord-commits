@@ -1,5 +1,5 @@
 name: "Discord Commits"
-description: "GitHub Action for Discord that prints ALL commit messages."
+description: "Send commit summary to Discord using custom templates"
 branding:
   icon: "bell"
   color: "purple"
