@@ -20,4 +20,4 @@ inputs:
 
 runs:
   using: "node16"
-  main: "discord-commits/index.mjs"
+  main: "dist/index.js"

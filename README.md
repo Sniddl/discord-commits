@@ -127,13 +127,13 @@ embed: {
 
 ## Testing / Contributing.
 
-We suggest everyone uses a tool like https://github.com/nektos/act to test GitHub actions locally. This is the tool I use so the directory structure will reflect that. If the following command does not pass, I will not accept your PR.
+Tests use https://github.com/nektos/act to simulate GitHub Actions locally. 
 
 1. install act see https://github.com/nektos/act for instructions.
-1. `cp .env.example .env` paste discord commit url into .env
+1. `cp .env.example .env.secrets` paste discord commit url into .env.secrets
 1. make sure the following command passes.
 
 ```
-act -W tests/workflows -e tests/push.json
+./tests/deploy/test.sh
 ```
 

@@ -10,11 +10,6 @@ jobs:
         with:
           path: "./"
 
-      - name: Use Node 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
       - name: Install NPM Dependencies (prod)
         run: npm install --frozen-lockfile --production
 

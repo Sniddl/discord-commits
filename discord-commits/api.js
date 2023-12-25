@@ -2,9 +2,9 @@ import st from "stjs";
 
 export async function loadTemplate(name) {
     try {
-        return (await import(`./templates/${name}.mjs`)).default
+        return (await import(`./templates/${name}.js`)).default
     } catch (err) {
-        return (await import(`./templates/plain.mjs`)).default
+        return (await import(`./templates/plain.js`)).default
     }
 }
 

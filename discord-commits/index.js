@@ -1,8 +1,8 @@
 import core from "@actions/core";
 import github from "@actions/github";
 import fetch from "node-fetch";
-import { createCommit, loadTemplate, parseTemplate, stringOrFalse, stringToBoolean } from "./api.mjs";
-import defaultPayload from "./defaults/payload-commits.mjs"
+import { createCommit, loadTemplate, parseTemplate, stringOrFalse, stringToBoolean } from "./api.js";
+import defaultPayload from "./defaults/payload-commits.js"
 
 const templateName = core.getInput("template") || "plain";
 const template = await loadTemplate(templateName)
