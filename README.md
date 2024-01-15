@@ -18,7 +18,7 @@ commit][commit] in picture.
   uses: Sniddl/discord-commits@v1.6
   with:
     webhook: ${{ secrets.DISCORD_WEBHOOK }}
-    template: 'avatar-with-link'
+    template: "avatar-with-link"
     include-extras: true
 ```
 
@@ -62,7 +62,7 @@ commit][commit] in picture.
 ## Predefined templates
 
 Here are the defaults for each template. If you want to modify the values, you need to turn the JSON
-into a string so it can be passed from the action environment to the script.  See main.yml for a
+into a string so it can be passed from the action environment to the script. See main.yml for a
 commented out example.
 
 ## `plain`
@@ -150,7 +150,7 @@ accept your PR.
 1. From the root of the repo, make sure the following command passes:
 
    ```sh
-   ./tests/deploy/test.sh
+   ./tests/pass/deploy/test.sh
    ```
 
 [nektos/act]: https://github.com/nektos/act
