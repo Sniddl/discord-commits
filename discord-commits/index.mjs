@@ -40,7 +40,9 @@ const payload = {
 }
 
 try {
-  await fetch(`${webhook}?wait=true`, {
+  const webhookURL = new URL(webhook);
+  webhookURL.searchParams.set('wait','true');
+  await fetch(webhookURL.toString(), {
     method: 'POST',
     headers: {
       "Content-Type": "application/json",
