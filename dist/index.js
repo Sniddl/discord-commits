@@ -39198,7 +39198,9 @@ const payload = {
 };
 
 try {
-  await (0,node_fetch__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .ZP)(`${webhook}?wait=true`, {
+  const webhookURL = new URL(webhook);
+  webhookURL.searchParams.set('wait','true');
+  await (0,node_fetch__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .ZP)(webhookURL.toString(), {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
