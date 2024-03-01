@@ -144,13 +144,11 @@ We suggest everyone uses a tool like [nektos/act] to test GitHub actions locally
 use so the directory structure will reflect that. If the following command does not pass, I will not
 accept your PR.
 
-1. Install act. See [nektos/act] for instructions.
-1. `cp secrets.env.example tests/secrets.env`. Open `tests/secrets.env` and paste your discord
-   webhook url into the value for `DISCORD_WEBHOOK`.
-1. From the root of the repo, make sure the following command passes:
+1. Install act & Docker. See [nektos/act] for instructions.
+1. From the root of the repo, ensure all the test cases say `sent` and that failing test cases do not show up in Discord:
 
    ```sh
-   ./tests/pass/deploy/test.sh
+   bash tests/run.sh
    ```
 
 [nektos/act]: https://github.com/nektos/act
