@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  disord_test_message:
+    runs-on: ubuntu-latest
+    name: discord commits
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Send message to discord
+        uses: ./ # Uses an action in the root directory
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          template: "avatar-with-link"
+          include-extras: true
+          exclude-commits: |
+            ^fix:
+            ^feat:

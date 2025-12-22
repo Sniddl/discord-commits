@@ -15,41 +15,47 @@ commit][commit] in picture.
 
 ```yaml
 - name: Discord Commits
-  uses: Sniddl/discord-commits@v1.6
+  uses: Sniddl/discord-commits@v1.7
   with:
     webhook: ${{ secrets.DISCORD_WEBHOOK }}
     template: "avatar-with-link"
     include-extras: true
+    exclude-commits: |
+      ^fix:
+      ^feat:
 ```
 
 ## Variables inside templates
 
-| Global Variable | Description                                                                                                                                                                                                   |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| github          | Access all data provided by GitHub such as payloads and commits. For example, the repository name. `{{ github.context.payload.repository.name }}`                                                             |
-| env             | Access all environment variables. For example, an environment variable called my_data. `{{ env.my_data }}`                                                                                                    |
-| commit          | Access the data for the current commit. This will apply to ALL commits in the push event. If you do not want multiple commits see other options. Here's an example for commit data `{{ commit.author.name }}` |
+| Global Variable | Description |
+|---|---|
+| github | Access all data provided by GitHub such as payloads and commits. For example, the repository name. `{{ github.context.payload.repository.name }}`|
+| env | Access all environment variables. For example, an environment variable called my_data. `{{ env.my_data }}` |
+| commit | Access the data for the current commit. This will apply to ALL commits in the push event. If you do not want multiple commits see other options. Here's an example for commit data `{{ commit.author.name }}`|
 
 ## Required options
 
-| Option  | Description                                                                                                    |
-| ------- | -------------------------------------------------------------------------------------------------------------- |
+| Option | Description |
+|---|---|
 | webhook | The url for a Discord webhook. Store this as a secret otherwise you may receive unwanted spam in your discord. |
 
 ## Essential options
 
-| Option   | Description                                                                                                                                                                                         |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| template | The name of a premade template located into the discord-commits/templates folder.                                                                                                                   |
-| message  | The text message that appears on Discord. This would be the equivalent of typing a message.                                                                                                         |
-| embed    | The template for each embed item. An embed item is shown for every commit message in the push event. There may be multiple commits per push. This can be prevented by enabling **last-commit-only** |
+| Option | Description |
+|---|---|
+| template | The name of a premade template located into the discord-commits/templates folder.|
+| message | The text message that appears on Discord. This would be the equivalent of typing a message.|
+| embed | The template for each embed item. An embed item is shown for every commit message in the push event. There may be multiple commits per push. This can be prevented by enabling **last-commit-only** |
 
 ## Other Options
 
-| Option           | Description                                                                             |
-| ---------------- | --------------------------------------------------------------------------------------- |
-| include-extras   | Boolean - Include extra embeds from templates such as a link to the payload difference. |
-| last-commit-only | Boolean - Only include the last commit.                                                 |
+| Option | Description |
+|---|---|
+| include-extras   | Boolean - Include extra embeds from templates such as a link to the payload difference.|
+| last-commit-only | Boolean - Only include the last commit.|
+| include-commits | String - Include commits that match the regular expressions defined on each line.|
+| exclude-commits | String - Exclude commits that match the regular expressions defined on each line.|
+
 
 ## Resources
 
@@ -62,7 +68,7 @@ commit][commit] in picture.
 ## Predefined templates
 
 Here are the defaults for each template. If you want to modify the values, you need to turn the JSON
-into a string so it can be passed from the action environment to the script. See main.yml for a
+into a string so it can be passed from the action environment to the script. See `.github/workflows/discord.yml` for a
 commented out example.
 
 ## `plain`
@@ -147,8 +153,8 @@ accept your PR.
 1. Install act & Docker. See [nektos/act] for instructions.
 1. From the root of the repo, ensure all the test cases say `sent` and that failing test cases do not show up in Discord:
 
-   ```sh
-   bash tests/run.sh
-   ```
+```sh
+bun run test
+```
 
 [nektos/act]: https://github.com/nektos/act

@@ -1,0 +1,515 @@
+{
+  "ref": "refs/tags/simple-tag",
+  "before": "6113728f27ae82c7b1a177c8d03f9e96e0adf246",
+  "after": "0000000000000000000000000000000000000000",
+  "created": false,
+  "deleted": true,
+  "forced": false,
+  "base_ref": null,
+  "compare": "https://www.google.com",
+  "commits": [
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/1",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:00:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:00:49Z"
+      },
+      "message": "fix: I fixed a thing",
+      "tree": {
+        "url": "https://www.google.com",
+        "sha": "6dcb09b5b57875f334f61aebed695e2e4193db5e"
+      },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/2",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:00:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:00:49Z"
+      },
+      "message": "refactor: I fixed some whitespace",
+      "tree": {
+        "url": "https://www.google.com",
+        "sha": "6dcb09b5b57875f334f61aebed695e2e4193db5e"
+      },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/3",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:00:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:00:49Z"
+      },
+      "message": "feat: I implemented a new thing",
+      "tree": {
+        "url": "https://www.google.com",
+        "sha": "6dcb09b5b57875f334f61aebed695e2e4193db5e"
+      },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/4",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:00:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:00:49Z"
+      },
+      "message": "chore: took care of something",
+      "tree": {
+        "url": "https://www.google.com",
+        "sha": "6dcb09b5b57875f334f61aebed695e2e4193db5e"
+      },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/5",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:01:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:01:49Z"
+      },
+      "message": "fix: handle null user input",
+      "tree": { "url": "https://www.google.com", "sha": "a1" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/6",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:02:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:02:49Z"
+      },
+      "message": "feat: add commit summary to webhook",
+      "tree": { "url": "https://www.google.com", "sha": "a2" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/7",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:03:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:03:49Z"
+      },
+      "message": "refactor: simplify payload builder",
+      "tree": { "url": "https://www.google.com", "sha": "a3" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/8",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:04:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:04:49Z"
+      },
+      "message": "chore: update dependencies",
+      "tree": { "url": "https://www.google.com", "sha": "a4" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/9",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:05:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:05:49Z"
+      },
+      "message": "fix: correct webhook URL encoding",
+      "tree": { "url": "https://www.google.com", "sha": "a5" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/10",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:06:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:06:49Z"
+      },
+      "message": "feat: support multiple embeds per push",
+      "tree": { "url": "https://www.google.com", "sha": "a6" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/11",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:07:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:07:49Z"
+      },
+      "message": "refactor: extract commit formatter",
+      "tree": { "url": "https://www.google.com", "sha": "a7" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/12",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:08:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:08:49Z"
+      },
+      "message": "chore: clean up console logs",
+      "tree": { "url": "https://www.google.com", "sha": "a8" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/13",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:09:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:09:49Z"
+      },
+      "message": "fix: prevent empty embed rendering",
+      "tree": { "url": "https://www.google.com", "sha": "a9" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/14",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:10:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:10:49Z"
+      },
+      "message": "feat: add zero-width space fallback",
+      "tree": { "url": "https://www.google.com", "sha": "b1" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/15",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:11:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:11:49Z"
+      },
+      "message": "refactor: normalize commit prefixes",
+      "tree": { "url": "https://www.google.com", "sha": "b2" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    {
+      "url": "https://github.com/Sniddl/discord-commits/commit/16",
+      "author": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:12:49Z",
+        "username": "monalisa"
+      },
+      "committer": {
+        "name": "Monalisa Octocat",
+        "email": "support@github.com",
+        "date": "2011-04-14T16:12:49Z"
+      },
+      "message": "chore: reorganize test fixtures",
+      "tree": { "url": "https://www.google.com", "sha": "b3" },
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    }
+  ],
+  "head_commit": null,
+  "repository": {
+    "id": 186853002,
+    "node_id": "MDEwOlJlcG9zaXRvcnkxODY4NTMwMDI=",
+    "name": "Regex-Include",
+    "full_name": "Pass/Regex-Include",
+    "private": false,
+    "owner": {
+      "name": "Pass",
+      "email": "21031067+Pass@users.noreply.github.com",
+      "login": "Pass",
+      "id": 21031067,
+      "node_id": "MDQ6VXNlcjIxMDMxMDY3",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/21031067?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Pass",
+      "html_url": "https://github.com/Pass",
+      "followers_url": "https://api.github.com/users/Pass/followers",
+      "following_url": "https://api.github.com/users/Pass/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Pass/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Pass/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Pass/subscriptions",
+      "organizations_url": "https://api.github.com/users/Pass/orgs",
+      "repos_url": "https://api.github.com/users/Pass/repos",
+      "events_url": "https://api.github.com/users/Pass/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Pass/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "html_url": "https://github.com/Pass/Regex-Include",
+    "description": null,
+    "fork": false,
+    "url": "https://github.com/Pass/Regex-Include",
+    "forks_url": "https://api.github.com/repos/Pass/Regex-Include/forks",
+    "keys_url": "https://api.github.com/repos/Pass/Regex-Include/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/Pass/Regex-Include/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/Pass/Regex-Include/teams",
+    "hooks_url": "https://api.github.com/repos/Pass/Regex-Include/hooks",
+    "issue_events_url": "https://api.github.com/repos/Pass/Regex-Include/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/Pass/Regex-Include/events",
+    "assignees_url": "https://api.github.com/repos/Pass/Regex-Include/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/Pass/Regex-Include/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/Pass/Regex-Include/tags",
+    "blobs_url": "https://api.github.com/repos/Pass/Regex-Include/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/Pass/Regex-Include/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/Pass/Regex-Include/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/Pass/Regex-Include/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/Pass/Regex-Include/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/Pass/Regex-Include/languages",
+    "stargazers_url": "https://api.github.com/repos/Pass/Regex-Include/stargazers",
+    "contributors_url": "https://api.github.com/repos/Pass/Regex-Include/contributors",
+    "subscribers_url": "https://api.github.com/repos/Pass/Regex-Include/subscribers",
+    "subscription_url": "https://api.github.com/repos/Pass/Regex-Include/subscription",
+    "commits_url": "https://api.github.com/repos/Pass/Regex-Include/Regex-Include{/sha}",
+    "git_commits_url": "https://api.github.com/repos/Pass/Regex-Include/git/Regex-Include{/sha}",
+    "comments_url": "https://api.github.com/repos/Pass/Regex-Include/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/Pass/Regex-Include/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/Pass/Regex-Include/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/Pass/Regex-Include/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/Pass/Regex-Include/merges",
+    "archive_url": "https://api.github.com/repos/Pass/Regex-Include/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/Pass/Regex-Include/downloads",
+    "issues_url": "https://api.github.com/repos/Pass/Regex-Include/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/Pass/Regex-Include/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/Pass/Regex-Include/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/Pass/Regex-Include/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/Pass/Regex-Include/labels{/name}",
+    "releases_url": "https://api.github.com/repos/Pass/Regex-Include/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/Pass/Regex-Include/deployments",
+    "created_at": 1557933565,
+    "updated_at": "2019-05-15T15:20:41Z",
+    "pushed_at": 1557933657,
+    "git_url": "git://github.com/Pass/Regex-Include.git",
+    "ssh_url": "git@github.com:Pass/Regex-Include.git",
+    "clone_url": "https://github.com/Pass/Regex-Include.git",
+    "svn_url": "https://github.com/Pass/Regex-Include",
+    "homepage": null,
+    "size": 0,
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "language": "Ruby",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": true,
+    "has_wiki": true,
+    "has_pages": true,
+    "forks_count": 1,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 2,
+    "license": null,
+    "forks": 1,
+    "open_issues": 2,
+    "watchers": 0,
+    "default_branch": "master",
+    "stargazers": 0,
+    "master_branch": "master"
+  },
+  "pusher": {
+    "name": "Pass",
+    "email": "21031067+Pass@users.noreply.github.com"
+  },
+  "sender": {
+    "login": "Pass",
+    "id": 21031067,
+    "node_id": "MDQ6VXNlcjIxMDMxMDY3",
+    "avatar_url": "https://avatars1.githubusercontent.com/u/21031067?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Pass",
+    "html_url": "https://github.com/Pass",
+    "followers_url": "https://api.github.com/users/Pass/followers",
+    "following_url": "https://api.github.com/users/Pass/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Pass/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Pass/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Pass/subscriptions",
+    "organizations_url": "https://api.github.com/users/Pass/orgs",
+    "repos_url": "https://api.github.com/users/Pass/repos",
+    "events_url": "https://api.github.com/users/Pass/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Pass/received_events",
+    "type": "User",
+    "site_admin": false
+  }
+}
