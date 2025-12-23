@@ -8,6 +8,7 @@ import {
   stringOrFalse,
   stringToBoolean,
   multilineStringToRegexArray,
+  multilineStringToArray,
 } from "./api.js";
 
 const templateName = core.getInput("template") || "plain";
@@ -25,6 +26,8 @@ const includeCommits = multilineStringToRegexArray(
 const excludeCommits = multilineStringToRegexArray(
   core.getInput("exclude-commits"),
 );
+const includeFooter = stringToBoolean(core.getInput("include-footer"));
+const noteKeywords = multilineStringToArray(core.getInput("note-keywords"));
 
 const embed =
   stringOrFalse(core.getInput("embed")) || JSON.stringify(template.embed);
@@ -54,7 +57,7 @@ let embeds = github.context.payload.commits
   .filter(matchesInclude)
   .filter(matchesExclude)
   .map((commit) => {
-    const titledCommmit = createCommit(commit);
+    const titledCommmit = createCommit(commit, { includeFooter, noteKeywords });
     return parseTemplate(
       {
         ...DATA,

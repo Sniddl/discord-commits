@@ -24,6 +24,7 @@
     "@actions/github": "^5.1.1",
     "@octokit/core": "^4.2.0",
     "@vercel/ncc": "^0.38.1",
+    "conventional-commits-parser": "^6.2.1",
     "node-fetch": "^3.3.0",
     "stjs": "^0.0.5"
   },

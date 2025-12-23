@@ -1,4 +1,5 @@
 import st from "stjs";
+import { CommitParser } from "conventional-commits-parser";
 
 export async function loadTemplate(name) {
   try {
@@ -45,13 +46,29 @@ export function stringOrFalse(string) {
   }
 }
 
-export function createCommit(commit) {
+export function createCommit(
+  commit,
+  { includeFooter, noteKeywords } = {
+    includeFooter: true,
+    noteKeywords: false,
+  },
+) {
   const messageSections = commit.message.split("\n\n");
-  return {
-    title: messageSections[0],
-    description: messageSections.slice(1).join("\n\n"),
+  const parser = new CommitParser({
+    noteKeywords,
+  });
+  const parsed = parser.parse(commit.message);
+  let description = messageSections.slice(1).join("\n\n");
+  if (!includeFooter) {
+    description = parsed.body;
+  }
+  const data = {
+    title: parsed.header,
+    description,
     ...commit,
+    ...parsed,
   };
+  return data;
 }
 
 export function parseTemplate(data, template) {
