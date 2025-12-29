@@ -17,6 +17,14 @@ inputs:
     description: "The name of of a premade template."
   last-commit-only:
     description: "Boolean - only show the last commit."
+  include-commits:
+    description: "Multiline regex patterns - only include commits matching these patterns."
+  exclude-commits:
+    description: "Multiline regex patterns - exclude commits matching these patterns."
+  include-footer:
+    description: "Boolean - Include footer content in descriptions."
+  note-keywords:
+    description: "Multiline list of footer identifiers (e.g., Signed-off-by, Co-authored-by)."
 
 runs:
   using: node16
