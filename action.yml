@@ -19,5 +19,5 @@ inputs:
     description: "Boolean - only show the last commit."
 
 runs:
-  using: node16
+  using: node22
   main: dist/index.js
